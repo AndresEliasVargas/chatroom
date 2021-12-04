@@ -1,2 +1,2 @@
-# chatroom
-Chat Room App - JavaScript Ninja Udemy Course
+# Chat Room Ninja
+Chat Room App - *JavaScript Ninja Udemy Course*
