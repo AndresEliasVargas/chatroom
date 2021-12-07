@@ -27,7 +27,10 @@ class Chatroom{
   }
   // real-time listener
   getChats(callback){
-    this.chats.onSnapshot(snapshot => {
+    this.chats
+      .where('room', '==', this.room)
+      .orderBy('created_at')
+      .onSnapshot(snapshot => {
         snapshot.docChanges().forEach(change => {
           if(change.type === 'added'){
             // update UI
@@ -38,7 +41,7 @@ class Chatroom{
   }
 };
 
-const chatRoom = new Chatroom('gaming', 'Andrés');
+const chatRoom = new Chatroom('general', 'Andrés');
 
 chatRoom.getChats((data) => {
   console.log(data);
